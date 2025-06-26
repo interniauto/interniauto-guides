@@ -112,6 +112,14 @@
         "@type": "Answer",
         "text": "Più veloce è meglio! Entro 30 minuti la rimozione è molto più facile. Dopo 24 ore diventa più complessa."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "La macchia è sparita ma si vede un alone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Normale! Tampona tutta l'area circostante con la stessa soluzione per uniformare, poi asciuga bene."
+      }
     }
   ]
 }
@@ -121,8 +129,10 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.6;color:#333;background:#f8f9fa}
 .header{background:#1a365d;color:white;padding:1rem 0;position:sticky;top:0;z-index:100}
-.nav{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 2rem}
-.home-btn,.guides-btn{background:#e53e3e;color:white;padding:0.5rem 1rem;border-radius:5px;text-decoration:none;font-weight:bold;margin-left:1rem}
+.nav{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 1rem;flex-wrap:wrap}
+.nav-brand{font-weight:bold;margin-bottom:0.5rem}
+.nav-buttons{display:flex;gap:0.5rem;flex-wrap:wrap}
+.home-btn,.guides-btn{background:#e53e3e;color:white;padding:0.6rem 1rem;border-radius:5px;text-decoration:none;font-weight:bold;font-size:0.9rem;white-space:nowrap}
 .home-btn:hover,.guides-btn:hover{background:#c53030}
 .container{max-width:800px;margin:0 auto;padding:2rem;background:white;min-height:100vh}
 .breadcrumb{color:#666;margin-bottom:1rem}
@@ -151,13 +161,44 @@ h3{color:#2d3748;margin:1.5rem 0 0.5rem 0}
 p{margin-bottom:1rem}
 ul,ol{margin:1rem 0 1rem 2rem}
 .highlight{background:#fff3cd;padding:0.2rem 0.4rem;border-radius:3px}
+.tip{background:#e6fffa;border-left:4px solid #38b2ac;padding:1rem;margin:1rem 0;border-radius:0 5px 5px 0}
+.tip h4{color:#285e61;margin-bottom:0.5rem}
+.footer{background:#2d3748;color:#a0aec0;padding:3rem 0;margin-top:4rem}
+.footer-content{max-width:1200px;margin:0 auto;padding:0 2rem;text-align:center}
+.footer-brand{color:white;font-size:1.2rem;font-weight:bold;margin-bottom:1rem}
+.footer-company{margin:2rem 0;font-size:0.9rem}
+.footer-features{display:flex;justify-content:center;gap:2rem;margin:2rem 0;flex-wrap:wrap}
+.footer-features span{background:#4a5568;padding:0.5rem 1rem;border-radius:15px;font-size:0.8rem}
+.footer-legal{border-top:1px solid #4a5568;padding-top:2rem;margin-top:2rem;font-size:0.8rem;color:#718096}
+.footer-links{margin:1rem 0}
+.footer-links a{color:#e53e3e;text-decoration:none;margin:0 1rem}
+.footer-links a:hover{color:#c53030}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .nav{flex-direction:column;align-items:center;padding:0.5rem}
+  .nav-brand{margin-bottom:0.5rem;font-size:1rem}
+  .nav-buttons{justify-content:center;width:100%}
+  .home-btn,.guides-btn{padding:0.5rem 0.8rem;font-size:0.85rem;min-width:auto}
+  .container{padding:1rem}
+  h1{font-size:1.8rem}
+  .footer-features{flex-direction:column;gap:1rem}
+  .footer-links a{display:block;margin:0.5rem 0}
+}
+
+@media (max-width: 480px) {
+  .nav-buttons{flex-direction:column;width:100%;gap:0.3rem}
+  .home-btn,.guides-btn{width:100%;text-align:center;padding:0.7rem}
+  h1{font-size:1.6rem}
+  .footer-content{padding:0 1rem}
+}
 </style>
 </head>
 <body>
 <header class="header">
 <nav class="nav">
-<div><strong>🚑 SOS Interni Auto</strong></div>
-<div>
+<div class="nav-brand">🚑 SOS Interni Auto</div>
+<div class="nav-buttons">
 <a href="/" class="guides-btn">📚 Tutte le Guide</a>
 <a href="https://interniauto.app" class="home-btn">🏠 Homepage</a>
 </div>
@@ -184,6 +225,11 @@ ul,ol{margin:1rem 0 1rem 2rem}
 <li><strong>NON asciugare al sole</strong> - Prima di aver rimosso completamente la macchia</li>
 <li><strong>NON usare alcool puro</strong> - Su pelle e tessuti delicati</li>
 </ul>
+</div>
+
+<div class="tip">
+<h4>💡 Tip Estate 2025</h4>
+<p>Le creme solari moderne hanno filtri UV più potenti che si attaccano maggiormente ai tessuti. Intervieni sempre entro 15 minuti per risultati ottimali.</p>
 </div>
 
 <h2>🚑 Metodo SOS - Emergenza 5 Minuti</h2>
@@ -230,6 +276,33 @@ ul,ol{margin:1rem 0 1rem 2rem}
 </div>
 </div>
 
+<h2>☀️ Metodi per Tipo di Crema Solare</h2>
+
+<h3>Crema Solare Waterproof/Resistente all'Acqua</h3>
+<div class="method">
+<div class="steps">
+<ol>
+<li>Più difficile da rimuovere - richiede sgrassatori potenti</li>
+<li>Doppia dose di detersivo piatti nella soluzione</li>
+<li>Lascia agire 20-25 minuti invece di 15</li>
+<li>Potrebbe servire ripetere il trattamento 2-3 volte</li>
+<li>Usa movimento tamponante, mai strofinare</li>
+</ol>
+</div>
+</div>
+
+<h3>Crema Solare con Zinco/Titanio (Fisica)</h3>
+<div class="method">
+<div class="steps">
+<ol>
+<li>Più facile da rimuovere - non penetra in profondità</li>
+<li>Spesso basta acqua tiepida + sapone neutro</li>
+<li>Raschia prima la parte bianca superficiale</li>
+<li>Evita prodotti acidi che possono fissare i minerali</li>
+</ol>
+</div>
+</div>
+
 <h2>🛡️ Metodi per Sedili in Pelle</h2>
 <div class="method">
 <h3>Trattamento Delicato per Pelle</h3>
@@ -263,6 +336,7 @@ ul,ol{margin:1rem 0 1rem 2rem}
 <li><strong>Salviette</strong> sempre in auto per emergenze</li>
 <li><strong>Impermeabilizzante</strong> per tessuti (applicare 1-2 volte l'anno)</li>
 <li><strong>Pulizia regolare</strong> per evitare accumuli</li>
+<li><strong>Kit emergenza</strong>: bicarbonato + aceto + detersivo piatti</li>
 </ul>
 
 <div class="faq">
@@ -287,6 +361,11 @@ ul,ol{margin:1rem 0 1rem 2rem}
 <div class="faq-q">La macchia è sparita ma si vede un alone?</div>
 <div class="faq-a">Normale! Tampona tutta l'area circostante con la stessa soluzione per uniformare, poi asciuga bene.</div>
 </div>
+
+<div class="faq-item">
+<div class="faq-q">Le creme solari bio sono più facili da rimuovere?</div>
+<div class="faq-a">Generalmente sì, perché hanno meno siliconi e polimeri sintetici. Spesso basta sapone di Marsiglia e acqua tiepida.</div>
+</div>
 </div>
 
 <div class="related">
@@ -302,5 +381,34 @@ ul,ol{margin:1rem 0 1rem 2rem}
 <a href="/">Vedi Tutte le Guide →</a>
 </div>
 </div>
+
+<footer class="footer">
+<div class="footer-content">
+<div class="footer-brand">🚑 SOS Interni Auto</div>
+<div class="footer-company">
+<strong>QUINTA DIMENSIONE srls</strong><br>
+P.IVA 05282450260<br>
+Tutti i diritti riservati
+</div>
+<div class="footer-features">
+<span>📈 Soluzioni basate sui problemi reali cercati su Google</span>
+<span>⏰ Aiuto immediato per ogni emergenza interno auto</span>
+<span>🛡️ Metodi sicuri</span>
+<span>🌿 Prodotti naturali</span>
+<span>⚡ Soluzioni rapide</span>
+</div>
+<div class="footer-links">
+<a href="https://interniauto.app">Homepage</a>
+<a href="/">Tutte le Guide</a>
+<a href="/privacy-policy">Privacy Policy</a>
+<a href="/cookie-policy">Cookie Policy</a>
+<a href="/gdpr">GDPR</a>
+</div>
+<div class="footer-legal">
+Questa guida è fornita a scopo informativo e non costituisce consulenza legale o professionale.<br>
+2025© QUINTA DIMENSIONE srls - P.IVA 05282450260
+</div>
+</div>
+</footer>
 </body>
 </html>
